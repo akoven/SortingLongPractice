@@ -42,8 +42,33 @@ function baseLog(x) {
 }
 
 function frequencySort(arr) {
-  // Your code here
-  
+  // get an obj with { number: frequency}
+  let frequencies = getFreq(arr);
+  // sort by decreasing value
+  arr.sort( (a,b) => b - a);
+  // sort by increasing frequency
+  // arr.sort( (a,b) => numCount(arr, a) - numCount(arr, b));
+  arr.sort( (a,b) => frequencies[a] - frequencies[b]);
+  return arr;
+}
+
+function getFreq(arr) {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    let number = arr[i];
+    if (obj[number]) obj[number]++;
+    else obj[number] = 1;
+  }
+  return obj;
+}
+
+function numCount(arr, target) {
+  let count = 0;
+
+  arr.forEach( el => {
+    if (el === target) count++;
+  })
+  return count;
 }
 
 module.exports = [
