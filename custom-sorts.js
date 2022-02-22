@@ -33,11 +33,17 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-  // Your code here
+arr.sort( (a,b) => a - b);
+return arr.sort((a,b) => baseLog(b) - baseLog(a))
+}
+function baseLog(x) {
+  // if (x === 0) return 0;
+  return Math.floor(Math.log(x) / Math.log(10))
 }
 
 function frequencySort(arr) {
   // Your code here
+  
 }
 
 module.exports = [
