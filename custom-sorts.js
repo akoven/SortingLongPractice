@@ -10,19 +10,16 @@ function ageSort(users) {
       return a.age - b.age;
     })
   );
-  //   let newArr = []
-  //   for (const user of users) {
-  // newArr.push(user.firstName)
-  //   }
-  //  users.forEach(user => {
-  // newArr.push(user.firstName)
-  // })
-  //  return newArr;
 }
 
 
 function oddEvenSort(arr) {
-  // Your code here
+  arr.sort( (a,b) => a - b);
+  return arr.sort(
+    ((a, b) => {
+      return (b % 2) - (a % 2);
+    })
+  );
 }
 
 function validAnagrams(s, t) {
